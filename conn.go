@@ -64,7 +64,7 @@ func (Conn *Conn) Serve() {
 		line, err := Conn.controlReader.ReadString('\n')
 		if err != nil {
 			if err == io.EOF {
-				continue
+				break
 			}
 
 			Conn.logger.Print(fmt.Sprintln("read error:", err))
